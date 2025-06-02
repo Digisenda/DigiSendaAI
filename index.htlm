@@ -1,0 +1,499 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B5E1VXMSV8');
+</script>
+
+<style>
+    :root {
+        --primary-color: #0f766e; /* Azul petróleo */
+        --secondary-color: #14b8a6; /* Verde jade */
+        --white: #ffffff;
+        --body-font: sans-serif;
+        --heading-font: sans-serif;
+    }
+
+    body {
+        font-family: var(--body-font);
+        margin: 0;
+        padding: 0;
+        background-color: var(--white);
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Hero Principal */
+    #hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('placeholder-hero.jpg'); /* Reemplazar con tu imagen */
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        text-align: center;
+        padding: 150px 20px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-family: var(--heading-font);
+    }
+
+    .hero-cta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .hero-cta a {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .hero-cta a:hover {
+        background-color: darken(var(--secondary-color), 10%);
+    }
+
+    /* Quién soy / Qué es DigiSenda */
+    #about {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    #about h2,
+    #specializations h2,
+    #projects h2,
+    #testimonials h2,
+    #blog h2,
+    #cta h2,
+    footer h3 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 25px;
+        font-family: var(--heading-font);
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about-content p {
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* Áreas de especialización */
+    #specializations {
+        background-color: #f9f9f9;
+        padding: 80px 20px;
+    }
+
+    .specializations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .specialization-item {
+        background-color: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .specialization-item h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+
+    .specialization-item p {
+        line-height: 1.7;
+    }
+
+    /* Proyectos destacados */
+    #projects {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .project-item {
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .project-item img {
+        width: 100%;
+        display: block;
+        height: auto; /* Mantener la proporción */
+        object-fit: cover; /* Cubrir el contenedor sin deformar */
+        aspect-ratio: 16 / 9; /* O la proporción deseada */
+    }
+
+    .project-info {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .project-info h3 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    .project-info a {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .project-info a:hover {
+        background-color: darken(var(--secondary-color), 10%);
+    }
+
+    /* Testimonios o Validaciones */
+    #testimonials {
+        background-color: #f9f9f9;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .testimonial-item {
+        background-color: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-item blockquote {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .testimonial-item p.author {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    /* Blog o sección educativa */
+    #blog {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .blog-placeholder {
+        background-color: #eee;
+        padding: 50px;
+        border-radius: 8px;
+        color: #777;
+    }
+
+    /* CTA – Lead Magnet / Contacto */
+    #cta {
+        background: linear-gradient(90deg, var(--primary-color), darken(var(--primary-color), 20%));
+        color: var(--white);
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .cta-buttons a,
+    .cta-buttons button {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-buttons a:hover,
+    .cta-buttons button:hover {
+        background-color: darken(var(--secondary-color), 10%);
+    }
+
+    .subscribe-form {
+        margin-top: 30px;
+    }
+
+    .subscribe-form input {
+        padding: 10px 15px;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        width: 60%;
+        max-width: 300px;
+    }
+
+    .subscribe-form button {
+        padding: 10px 15px;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .subscribe-form button:hover {
+        background-color: darken(var(--secondary-color), 10%);
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: var(--white);
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    footer h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        color: var(--white);
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    .social-links a {
+        color: var(--white);
+        font-size: 1.5rem;
+        margin: 0 15px;
+    }
+
+    .social-links a:hover {
+        opacity: 0.8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        #hero {
+            padding: 100px 20px;
+        }
+
+        #hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero-cta {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .specializations-grid,
+        .projects-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subscribe-form input {
+            width: 80%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .subscribe-form button {
+            width: 80%;
+            border-radius: 5px;
+        }
+    }
+</style>
+&lt;/head>
+&lt;body>
+&lt;header>
+&lt;/header>
+
+<main>
+    <section id="hero" class="container">
+        <h1>Potenciando el futuro digital con inteligencia artificial real y accesible.</h1>
+        <div class="hero-cta">
+            <a href="[https://wa.me/TU_NUMERO_DE_WHATSAPP](https://wa.me/TU_NUMERO_DE_WHATSAPP)" target="_blank" rel="noopener noreferrer">Habla con un experto</a>
+            <a href="#contact" class="cta-smooth-scroll">Hablemos de tu próximo proyecto IA</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Quién soy / Qué es DigiSenda</h2>
+        <div class="about-content">
+            <p>Somos DigiSenda AI, una marca nacida de la pasión por la inteligencia artificial y la firme creencia en su capacidad para transformar negocios y vidas. Fundada con la visión de hacer la IA accesible y aplicable para todos, DigiSenda representa la convergencia entre la innovación tecnológica y la practicidad en el mundo digital.</p>
+            <p>Nacimos de la necesidad de simplificar la complejidad de la inteligencia artificial, ofreciendo soluciones claras y efectivas que impulsan el crecimiento y la eficiencia. Representamos la vanguardia de la tecnología, un aliado estratégico para quienes buscan optimizar sus procesos y alcanzar nuevas metas en el entorno digital.</p>
+        </div>
+    </section>
+
+    <section id="specializations" class="container">
+        <h2>Áreas de especialización</h2>
+        <div class="specializations-grid">
+            <div class="specialization-item">
+                <h3>Automatización con IA</h3>
+                <p>Desarrollamos soluciones de automatización inteligente para optimizar flujos de trabajo, reducir costos y mejorar la productividad en diversas áreas de tu negocio.</p>
+                <p><strong>Aplicaciones prácticas:</strong> Implementación de chatbots inteligentes, automatización de tareas repetitivas, análisis predictivo para la toma de decisiones, y más.</p>
+            </div>
+            <div class="specialization-item">
+                <h3>Aplicaciones prácticas (ej: LeadSeguro AI)</h3>
+                <p>Creamos aplicaciones de IA diseñadas para resolver problemas específicos y generar resultados tangibles. Nuestro enfoque se centra en la usabilidad y el impacto real.</p>
+                <p><strong>LeadSeguro AI:</strong> Nuestra solución estrella para la calificación y gestión de leads, diseñada para maximizar tus oportunidades de venta. <a href="#projects">Más información abajo.</a></p>
+            </div>
+            <div class="specialization-item">
+                <h3>Marketing y sistemas sin código</h3>
+                <p>Te ayudamos a implementar estrategias de marketing efectivas y a construir sistemas automatizados sin necesidad de escribir código, aprovechando herramientas y plataformas intuitivas.</p>
+                <p><strong>Servicios:</strong> Automatización de campañas de email marketing, creación de flujos de automatización en CRM, implementación de landing pages y formularios sin código, análisis de datos para optimización de marketing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Proyectos destacados</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="placeholder-leadseguro.jpg" alt="LeadSeguro AI">
+                <div class="project-info">
+                    <h3>LeadSeguro AI</h3>
+                    <p>Plataforma inteligente para la calificación y el seguimiento de leads, utilizando IA para identificar las oportunidades de venta más prometedoras y optimizar el proceso comercial.</p>
+                    <a href="#">Próximamente - Conoce LeadSeguro AI</a>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>🔜 IA Educativa</h3>
+                    <p>(Placeholder para futuros proyectos)</p>
+                    <p>Estamos trabajando en innovadoras soluciones de IA para el sector educativo. ¡Mantente atento a las novedades!</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section id="testimonials" class="container">
+        <h2>Testimonios o Validaciones</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <blockquote>"La implementación de soluciones de DigiSenda AI ha transformado la eficiencia de nuestro equipo comercial."</blockquote>
+                <p class="author">Cliente Satisfecho</p>
+            </div>
+            <div class="testimonial-item">
+                <blockquote>"Su enfoque en marketing sin código nos ha permitido lanzar campañas efectivas de manera rápida y sencilla."</blockquote>
+                <p class="author">Empresa Innovadora</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="blog" class="container">
+        <h2>Blog o sección educativa</h2>
+        <div class="blog-placeholder">
+            <h3>Próximamente</h3>
+            <p>Estaremos compartiendo artículos, guías y recursos sobre inteligencia artificial, automatización y marketing digital.</p>
+        </div>
+    </section>
+
+    <section id="cta" class="container">
+        <div class="cta-content">
+            <h2>Suscribite gratis y recibí una guía práctica de 3 sistemas con IA que podés usar hoy.</h2>
+            <div class="cta-buttons">
+                <a href="[https://wa.me/TU_NUMERO_DE_WHATSAPP](https://wa.me/TU_NUMERO_DE_WHATSAPP)" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+            <p>O <a href="#contact" class="cta-smooth-scroll" style="color: var(--secondary-color); text-decoration: underline;">hablemos directamente de tu proyecto</a>.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <h3>DigiSenda AI</h3>
+        <div class="footer-links">
+            <a href="/privacidad">Política de Privacidad</a>
+            <a href="/terminos">Términos y Condiciones</a>
+        </div>
+        <div class="social-links">
+            </div>
+        <p>Correo oficial: <a href="mailto:admin@digisendaai.com">admin@digisendaai.com</a></p>
+        <p>&copy; 2023 DigiSenda AI. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Script para hacer scroll suave a las secciones (opcional)
+    document.querySelectorAll('a.cta-smooth-scroll').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
